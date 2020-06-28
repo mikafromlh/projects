@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.control {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: 5px;
+}
+
+.result {
+  
+}
