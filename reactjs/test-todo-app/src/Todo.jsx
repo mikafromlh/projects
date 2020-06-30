@@ -4,12 +4,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import { deleteTodo , selectTodo } from './redux/Actions.js';
+import { deleteTodo , selectTodo, checkTodo } from './redux/Actions.js';
 
 
 function Todo(props) {
 
-    const handleChange = () => {
+    const handleCheck = () => {
+        props.checkTodo(props.id);
     }
 
     const handleSelect = () => {
@@ -24,8 +25,8 @@ function Todo(props) {
         <div className="Todo">
             <Checkbox
                 color="default"
-                checked={true}
-                onChange={handleChange}
+                checked={props.checked}
+                onChange={handleCheck}
                 inputProps={{ 'aria-label': 'primary checkbox' }}
             />
 
@@ -49,6 +50,7 @@ function Todo(props) {
 const mapDispatchToProps = (dispatch, ownProps) => ({
     deleteTodo: (id) => dispatch(deleteTodo(id)),
     selectTodo: (id) => dispatch(selectTodo(id)),
+    checkTodo: (id) => dispatch(checkTodo(id)),
 })
 
 export default connect(null,mapDispatchToProps)(Todo);

@@ -6,7 +6,7 @@ import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
 import Todo from './Todo.jsx';
 import TodoDescription from './TodoDescription';
-import { addTodo, selectTodo } from './redux/Actions.js';
+import { addTodo, selectTodo, addRandomTodo } from './redux/Actions.js';
 
 function App(props) {
 
@@ -19,6 +19,10 @@ function App(props) {
         props.addTodo(description);
     }
 
+    const handleAddRandomTodo = function() {
+        props.addRandomTodo();
+    }
+
     return (
         <div className="App">
             
@@ -26,6 +30,9 @@ function App(props) {
                 <TextField id="description" label="description" variant="outlined" margin='dense' />
                 <Button variant="contained" color="primary" classes={{ root: "button-addtodo" }} onClick={handleAddTodo} >
                     Ajouter
+                </Button>
+                <Button variant="contained" color="primary" classes={{ root: "button-addtodo" }} onClick={handleAddRandomTodo} >
+                    Ajouter Random
                 </Button>
             </div>
             
@@ -54,6 +61,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     addTodo: (description) => dispatch(addTodo(description)),
+    addRandomTodo: (description) => dispatch(addRandomTodo(description)),
     selectTodo: (id) => dispatch(selectTodo(id)),
 })
 

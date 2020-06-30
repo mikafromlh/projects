@@ -42,6 +42,14 @@ const todos = (state = initialState, action) => {
                 selected: action.id
             }
 
+        case 'CHECK_TODO':
+            return {
+                ...state,
+                todoList: state.todoList.map(todo =>
+                    todo.id === action.id ? { ...todo, checked: !todo.checked } : todo
+                )
+            }
+
         // case 'TOGGLE_TODO':
         //     return state.map(todo =>
         //         todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
