@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Detting Started with Create React Appd
+=======
+# Retting Started with Create React Apps
+>>>>>>> 8f52ce8c55ffff494661e8127656aba99e92db9b
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
