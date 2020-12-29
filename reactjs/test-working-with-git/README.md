@@ -1,4 +1,4 @@
-# Retting Started with Create React Apps
+# Setting Started with Create React Appp
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
